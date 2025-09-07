@@ -1,89 +1,141 @@
-html {
-  scroll-behavior: smooth;
+:root{
+  --bg: #f6f7f2;
+  --ink: #0b3d2e;
+  --ink-2:#163f2f;
+  --accent:#1c6b43;
+  --accent-2:#0d5232;
+  --pill:#144b33;
+  --pill-hover:#0f3c29;
+  --shadow: 0 10px 24px rgba(0,0,0,.18);
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: url("img/20250904_2021_Tecnologia\ e\ Sustentabilidade\ Alimentar_simple_compose_01k4bgg362ea1886w2mm69kfkk\ \(1\).png") no-repeat center center fixed;
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height:1.6;
+}
+
+/* Container utilitário */
+.container{
+  width: min(1120px, 92%);
+  margin-inline: auto;
+}
+
+/* Header */
+.site-header{
+  position: sticky;
+  top:0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(8px);
+  background: rgba(246,247,242,.7);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: .8rem 0;
+}
+.brand{
+  font-weight:800; text-decoration:none; color:var(--ink);
+  letter-spacing:.2px;
+}
+.nav{
+  display:flex; gap:.4rem; flex-wrap:wrap;
+}
+.nav a.nav-btn{
+  text-decoration:none;
+  padding:.55rem .9rem;
+  border-radius:999px;
+  font-weight:600;
+  background: transparent;
+  border:1px solid rgba(22,63,47,.25);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+  color:var(--ink-2);
+}
+.nav a.nav-btn:hover,
+.nav a.nav-btn:focus{
+  background:var(--accent);
+  color:#fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Hamburger (mobile) */
+.hamburger{
+  display:none;
+  border:0; background:transparent; font-size:1.4rem; cursor:pointer;
+}
+@media (max-width: 860px){
+  .nav{ display:none; }
+  .nav.open{ display:flex; flex-direction:column; gap:.6rem; position:absolute; right:4%; top:64px; background:#ffffffea; padding:1rem; border-radius:16px; box-shadow: var(--shadow);}
+  .hamburger{ display:block; }
+}
+
+/* Hero com imagem de fundo */
+.hero{
+  position:relative;
+  min-height: 78vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  color:#0c2b1f;
+  /* >>> Ajuste o caminho da imagem aqui conforme seu repositório <<< */
+  background-image: url("img/20250904_2021_Tecnologia\ e\ Sustentabilidade\ Alimentar_simple_compose_01k4bgg362ea1886w2mm69kfkk\ \(1\).png");
   background-size: cover;
-  color: #333;
+  background-position: center;
+  background-repeat:no-repeat;
+}
+.hero .overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(246,247,242,.78), rgba(246,247,242,.92));
+}
+.hero-content{
+  position:relative; z-index:1;
+  padding: 3.2rem 0 2.4rem;
+}
+.hero h1{
+  margin:0 0 .2rem 0;
+  font-size: clamp(2.0rem, 4.4vw, 3.2rem);
+  line-height:1.12;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+.subtitle{
+  margin:.2rem 0 1.6rem;
+  font-weight:600; opacity:.9;
+}
+.deck{
+  margin: 0 auto .6rem;
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+  color: var(--accent-2);
+}
+.lead{
+  max-width: 70ch;
+  margin: 0 auto 1.6rem;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
 }
 
-/* cabeçalho fixo no topo */
-header {
-  background: rgba(255, 255, 255, 0.8); /* leve transparência sobre o papel */
-  padding: 15px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Botões em “pílula” com hover efeito */
+.cta-row{
+  display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center; margin-top: .8rem;
 }
-
-header h1 {
-  color: #225d26;
-  margin: 0 20px 0 0;
-  font-size: 1.4rem;
-  flex-basis: 100%;
-  text-align: center;
+.pill{
+  display:inline-block;
+  text-decoration:none;
+  padding:.8rem 1.1rem;
+  border-radius:999px;
+  background: var(--pill);
+  color:#fff;
+  font-weight:600;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
 }
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+.pill:hover, .pill:focus{
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+  filter: brightness(1.05);
 }
-
-nav a {
-  text-decoration: none;
-  color: #225d26;
-  font-weight: bold;
-  padding: 8px 14px;
-  border-radius: 6px;
-  transition: 0.3s;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-nav a:hover {
-  background-color: #225d26;
-  color: #fff;
-}
-
-/* hero com espaçamento porque header é fixo */
-.hero {
-  text-align: center;
-  padding: 120px 20px 60px;
-  background: rgba(240, 248, 244, 0.8);
-  margin: 0 auto;
-  max-width: 900px;
-  border-radius: 12px;
-}
-
-.hero h2 {
-  font-size: 2rem;
-  color: #1d4d20;
-}
-
-.hero p {
-  max-width: 600px;
-  margin: 20px auto;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-section {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: 40px auto;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 12px;
-}
+.pill:active{ transform: translateY(-1px) scale(.99); }

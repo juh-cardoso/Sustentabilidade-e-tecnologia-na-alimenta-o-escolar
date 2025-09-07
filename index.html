@@ -1,38 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sustentabilidade e Tecnologia - Paraná</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sustentabilidade e Tecnologia — Alimentação Escolar do Paraná</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Sustentabilidade e Tecnologia</h1>
-    <nav>
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-      <a href="#gestao">Gestão alimentar</a>
-      <a href="#projetos-lei">Projetos de Lei</a>
-      <a href="#projetos-melhoria">Projetos de melhoria</a>
-      <a href="#planos">Planos orçamentais</a>
-      <a href="#opiniao">Opinião pública</a>
-    </nav>\n  </header>
+  <!-- Navegação -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Sustentabilidade &amp; Tecnologia</a>
+      <nav class="nav">
+        <a class="nav-btn" href="index.html">Inicial</a>
+        <a class="nav-btn" href="sobre.html">Sobre</a>
+        <a class="nav-btn" href="contato.html">Contato</a>
+        <a class="nav-btn" href="gestao-publica.html">Gestão pública</a>
+        <a class="nav-btn" href="opiniao-publica.html">Opinião pública</a>
+        <a class="nav-btn" href="projetos-de-melhoria.html">Projetos de melhoria</a>
+        <a class="nav-btn" href="projetos-de-lei.html">Projetos de leis</a>
+      </nav>
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
 
-  <section class="hero" id="inicio">
-    <h2>Alimentação Escolar do Paraná</h2>
-    <p>Promovemos um sistema de alimentação escolar sustentável no Paraná, integrando inovações tecnológicas para reduzir desperdícios e promover a utilização eficiente dos recursos naturais.</p>
+  <!-- Hero com imagem de fundo -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <h1>Sustentabilidade e Tecnologia</h1>
+      <p class="subtitle">no ramo de alimentação do Paraná</p>
+      <h2 class="deck">Alimentação Escolar do Paraná</h2>
+      <p class="lead">
+        Promovemos um sistema de alimentação escolar sustentável no Paraná, integrando inovações
+        tecnológicas para reduzir desperdícios e usar melhor os recursos naturais.
+      </p>
+
+      <div class="cta-row">
+        <a class="pill" href="gestao-publica.html">Gestão pública</a>
+        <a class="pill" href="projetos-de-lei.html">Projetos de leis</a>
+        <a class="pill" href="projetos-de-melhoria.html">Projetos de melhoria</a>
+        <a class="pill" href="planos-orcamentais.html">Planos orçamentais</a>
+        <a class="pill" href="opiniao-publica.html">Opinião pública</a>
+      </div>
+    </div>
   </section>
 
-  <section id="sobre">
-    <h2>Sobre</h2>
-    <p>Conteúdo sobre o projeto...</p>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Formas de contato aqui...</p>
-  </section>
+  <script>
+    // Menu móvel simples
+    const btn = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
 </body>
 </html>
