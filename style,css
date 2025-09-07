@@ -1,86 +1,89 @@
 html {
-  scroll-behavior: smooth; /* efeito de rolagem suave */
+  scroll-behavior: smooth;
 }
 
 body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background-color: #f9f9f9;
-color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url("img/20250904_2021_Tecnologia\ e\ Sustentabilidade\ Alimentar_simple_compose_01k4bgg362ea1886w2mm69kfkk\ \(1\).png") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
 }
 
+/* cabeçalho fixo no topo */
 header {
-background-color: #eaf3e7;
-padding: 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+  background: rgba(255, 255, 255, 0.8); /* leve transparência sobre o papel */
+  padding: 15px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 header h1 {
-color: #225d26;
-margin: 0;
-font-size: 1.6rem;
+  color: #225d26;
+  margin: 0 20px 0 0;
+  font-size: 1.4rem;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 nav a {
-margin: 0 10px;
-text-decoration: none;
-color: #225d26;
-font-weight: bold;
-padding: 8px 14px;
-border-radius: 6px;
-transition: 0.3s;
+  text-decoration: none;
+  color: #225d26;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 nav a:hover {
-background-color: #225d26;
-color: #fff;
+  background-color: #225d26;
+  color: #fff;
 }
 
+/* hero com espaçamento porque header é fixo */
 .hero {
-text-align: center;
-padding: 50px 20px;
-background-color: #f0f8f4;
+  text-align: center;
+  padding: 120px 20px 60px;
+  background: rgba(240, 248, 244, 0.8);
+  margin: 0 auto;
+  max-width: 900px;
+  border-radius: 12px;
 }
 
 .hero h2 {
-font-size: 2rem;
-color: #1d4d20;
+  font-size: 2rem;
+  color: #1d4d20;
 }
 
 .hero p {
-max-width: 600px;
-margin: 20px auto;
-font-size: 1.1rem;
-line-height: 1.6;
+  max-width: 600px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-.btn-container {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-margin-top: 30px;
-gap: 15px;
-}
-
-.btn-container a {
-text-decoration: none;
-padding: 12px 20px;
-background-color: #225d26;
-color: #fff;
-border-radius: 8px;
-font-weight: bold;
-transition: 0.3s;
-}
-
-.btn-container a:hover {
-background-color: #2e7d32;
-transform: scale(1.05);
-}
-
-/* seções adicionais */
 section {
-  padding: 60px 20px;
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
 }
