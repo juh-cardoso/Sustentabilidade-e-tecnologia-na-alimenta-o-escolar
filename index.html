@@ -1,62 +1,158 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sustentabilidade e Tecnologia — Alimentação Escolar do Paraná</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Página com Plano de Fundo</title>
+  <style>
+    /* Reset básico */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Fundo geral: troque 'fundo.jpg' pelo caminho/URL da sua imagem */
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.4;
+      /* imagem do background */
+      background-image: url('fundo.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;           /* cobre toda a tela */
+      background-position: center;      /* centraliza a imagem */
+      background-attachment: fixed;     /* efeito parado (não recomendado em alguns mobiles) */
+      color: #0b2a16;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Sobreposição escura suave para legibilidade */
+    .overlay {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: none;
+      background: linear-gradient(to bottom right, rgba(255,255,255,0.75), rgba(255,255,255,0.60));
+      /* se quiser escurecer em vez de clarear, use rgba(0,0,0,0.35) etc. */
+    }
+
+    /* Cabeçalho com navegação simples */
+    header {
+      max-width: 1200px;
+      margin: 1.5rem auto;
+      width: calc(100% - 2rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 1.1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin-left: 0.75rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 10px;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    /* Botões (links) com efeito ao passar o mouse */
+    nav a.primary {
+      background: rgba(6,120,6,0.12);
+      color: #084b14;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.02), inset 0 -2px 0 rgba(0,0,0,0.02);
+    }
+    nav a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-decoration: none;
+    }
+
+    /* Área principal */
+    .hero {
+      max-width: 1200px;
+      margin: 2rem auto;
+      width: calc(100% - 2rem);
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.85);
+      padding: 1.25rem;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(2,20,6,0.06);
+    }
+
+    .title {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #0b3b1a;
+    }
+
+    .subtitle {
+      color: #0b3b1a;
+      opacity: 0.85;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer simples */
+    footer {
+      max-width: 1200px;
+      margin: 2rem auto 3rem;
+      width: calc(100% - 2rem);
+      color: #0b3b1a;
+      opacity: 0.8;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Responsividade: em telas pequenas empilha tudo */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      nav a { margin-left: 0.4rem; padding: 0.45rem 0.7rem; }
+      background-attachment: scroll; /* melhora comportamento em mobile */
+    }
+  </style>
 </head>
 <body>
-  <!-- Navegação -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">Sustentabilidade &amp; Tecnologia</a>
-      <nav class="nav">
-        <a class="nav-btn" href="index.html">Inicial</a>
-        <a class="nav-btn" href="sobre.html">Sobre</a>
-        <a class="nav-btn" href="contato.html">Contato</a>
-        <a class="nav-btn" href="gestao-publica.html">Gestão pública</a>
-        <a class="nav-btn" href="opiniao-publica.html">Opinião pública</a>
-        <a class="nav-btn" href="projetos-de-melhoria.html">Projetos de melhoria</a>
-        <a class="nav-btn" href="projetos-de-lei.html">Projetos de leis</a>
+  <div class="overlay">
+    <header>
+      <div class="brand">Catalogus Botanicus</div>
+      <nav>
+        <a href="#inicio" class="primary">Início</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#ebooks">E-books</a>
+        <a href="#pesquisa">Pesquisa</a>
+        <a href="#comunidade">Comunidade</a>
+        <a href="#contato">Contato</a>
       </nav>
-      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
-    </div>
-  </header>
+    </header>
 
-  <!-- Hero com imagem de fundo -->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="container hero-content">
-      <h1>Sustentabilidade e Tecnologia</h1>
-      <p class="subtitle">no ramo de alimentação do Paraná</p>
-      <h2 class="deck">Alimentação Escolar do Paraná</h2>
-      <p class="lead">
-        Promovemos um sistema de alimentação escolar sustentável no Paraná, integrando inovações
-        tecnológicas para reduzir desperdícios e usar melhor os recursos naturais.
-      </p>
+    <main class="hero">
+      <section class="card">
+        <div class="title">Bem-vinda(o)</div>
+        <div class="subtitle">A imagem é o pano de fundo; o conteúdo, a história. Navegue, estude e faça crescer.</div>
+        <p>Use este bloco para inserir textos, formulários ou links. O fundo cobre a tela inteira e a camada branca translúcida garante leitura confortável.</p>
+      </section>
 
-      <div class="cta-row">
-        <a class="pill" href="gestao-publica.html">Gestão pública</a>
-        <a class="pill" href="projetos-de-lei.html">Projetos de leis</a>
-        <a class="pill" href="projetos-de-melhoria.html">Projetos de melhoria</a>
-        <a class="pill" href="planos-orcamentais.html">Planos orçamentais</a>
-        <a class="pill" href="opiniao-publica.html">Opinião pública</a>
-      </div>
-    </div>
-  </section>
+      <aside class="card">
+        <strong>Ficha rápida</strong>
+        <p style="margin-top:0.4rem">Adicione aqui botões, sumários ou uma pequena galeria — tudo ficará harmonioso com o plano de fundo.</p>
+      </aside>
+    </main>
 
-  <script>
-    // Menu móvel simples
-    const btn = document.querySelector('.hamburger');
-    const nav = document.querySelector('.nav');
-    btn.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  </script>
+    <footer>
+      Feito com folhas, vento e um toque de código. 🌿
+    </footer>
+  </div>
 </body>
 </html>
